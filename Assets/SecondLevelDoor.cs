@@ -5,6 +5,7 @@ using UnityEngine;
 public class SecondLevelDoor : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if(other.gameObject.tag == "Player")
+            Destroy(gameObject);
     }
 }
