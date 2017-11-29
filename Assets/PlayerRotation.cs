@@ -12,7 +12,7 @@ public class PlayerRotation : MonoBehaviour {
         float x = Input.GetAxis("Mouse Y");
         float y = Input.GetAxis("Mouse X");
 
-        transform.eulerAngles += new Vector3(0, y, 0);
+        transform.eulerAngles += new Vector3(0, y, 0) * SpeedRotation;
         CamTransform.eulerAngles += new Vector3(-x, 0, 0);
     }
 }
