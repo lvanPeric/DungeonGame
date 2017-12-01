@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class KnightScript : MonoBehaviour {
+public class KnightScript : LifeScript {
     private NavMeshAgent agent;
     public Transform Destination;
 
@@ -14,6 +14,28 @@ public class KnightScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        agent.destination = Destination.position;
+        if (GameObject.FindGameObjectWithTag("Player"))
+            agent.destination = Destination.position;
+        else
+            agent.destination = transform.position;
+    }
+
+    public override void Damage(int d)
+    {
+        base.Damage(d);
+        if (Pv <= 0)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
+            Destroy(this);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<LifeScript>())
+        {
+            collision.gameObject.GetComponent<LifeScript>().Damage(5);
+        }
     }
 }
