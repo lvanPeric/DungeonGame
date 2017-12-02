@@ -28,6 +28,7 @@ public class KnightScript : LifeScript {
             GetComponent<BoxCollider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
             Destroy(this);
+            gameObject.tag = "Untagged";
         }
     }
 

@@ -8,7 +8,8 @@ public class HorseScript : LifeScript {
         base.Damage(d);
         if(Pv <= 0)
         {
-            Destroy(gameObject);
+            gameObject.tag = "Untagged";
+            Destroy(gameObject);            
         }
     }
 }

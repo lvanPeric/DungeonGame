@@ -99,8 +99,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 50
-    agentClimb: 0.4
+    agentSlope: 56.2
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -780,6 +780,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f930b411e8bacca468e454f2ad92d31a, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &383812360 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 6befef9d9c46cf9498b41d2774d73de0, type: 3}
+  m_PrefabInternal: {fileID: 2091512814}
+--- !u!114 &383812361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 383812360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42db2a4eedf930845b26495ab3ea6bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &490656535
 Prefab:
   m_ObjectHideFlags: 0
@@ -3874,6 +3889,10 @@ Prefab:
     - target: {fileID: 400004, guid: 6befef9d9c46cf9498b41d2774d73de0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6befef9d9c46cf9498b41d2774d73de0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6befef9d9c46cf9498b41d2774d73de0, type: 3}
