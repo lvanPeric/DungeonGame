@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLifeScript : LifeScript {
     private LifeScript life;
@@ -14,7 +15,7 @@ public class PlayerLifeScript : LifeScript {
     {
         if (life.Pv <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("SecondScene");
         }
     }
 
