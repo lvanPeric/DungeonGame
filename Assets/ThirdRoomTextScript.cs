@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ThirdRoomTextScript : MonoBehaviour {
+    private float debutNiveauTimer = 0;
     private float timer = 0;
     private Text t;
+    public GameObject g;
 
     private void Start()
     {
@@ -14,6 +16,15 @@ public class ThirdRoomTextScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        debutNiveauTimer += Time.deltaTime;
+        if (debutNiveauTimer < 20)
+        {
+            t.text = "Après avoir tué les chevaux, attaquons nous aux chevaliers";
+        } else
+        {
+            t.text = "";
+        }
+
         if (GameObject.FindGameObjectWithTag("Door2"))
         {
             t.text = null;
@@ -29,6 +40,11 @@ public class ThirdRoomTextScript : MonoBehaviour {
                 t.text = "Vous avez 300 Secondes";
             } else {
                 t.text = null;
+            }
+
+            if (GameObject.FindGameObjectWithTag("Victoire"))
+            {
+                t.text = "Bravo, tu as gagné, tu as réussi à la délivrer. Merci d'avoir joué au jeu";
             }
         }
     }

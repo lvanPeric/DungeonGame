@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
@@ -26,6 +27,13 @@ public class TimerScript : MonoBehaviour
         {
             timer += Time.deltaTime;
             t.text = (int)timer + "";
+            if(timer >= 300)
+            {
+                timer = 0;
+                t.text = "GAME OVER, ta bien-aimée est morte";
+                if(timer > 5)
+                    SceneManager.LoadScene("Second Scene");
+            }
         }
     }
 
