@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Knight
   - Horse
+  - Door2
   layers:
   - Default
   - TransparentFX
