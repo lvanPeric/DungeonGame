@@ -19,7 +19,7 @@ public class ThirdRoomTextScript : MonoBehaviour {
         debutNiveauTimer += Time.deltaTime;
         if (debutNiveauTimer < 20)
         {
-            t.text = "Après avoir tué les chevaux, attaquons nous aux chevaliers";
+            t.text = "Après avoir tué les chevaux, attaquons-nous aux chevaliers, il y en 5 aussi dans le bâtiment d'en face";
         } else
         {
             t.text = "";
