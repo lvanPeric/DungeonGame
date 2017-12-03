@@ -16,18 +16,16 @@ public class ThirdRoomTextScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        debutNiveauTimer += Time.deltaTime;
-        if (debutNiveauTimer < 20)
-        {
-            t.text = "Après avoir tué les chevaux, attaquons-nous aux chevaliers, il y en 5 aussi dans le bâtiment d'en face";
-        } else
-        {
-            t.text = "";
-        }
-
         if (GameObject.FindGameObjectWithTag("Door2"))
         {
-            t.text = null;
+            debutNiveauTimer += Time.deltaTime;
+            if (debutNiveauTimer > 1 && debutNiveauTimer < 15)
+            {
+                t.text = "Après avoir tué les chevaux, attaquons-nous aux chevaliers, il y en 5 aussi dans le bâtiment d'en face";
+            } else
+            {
+                t.text = "";
+            }
         }
         else
         {

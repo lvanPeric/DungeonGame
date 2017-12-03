@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PunchDamageScript : LifeScript {
     LineRenderer line;
-    public GameObject g;
 
     // Use this for initialization
     void Start()
@@ -23,7 +22,7 @@ public class PunchDamageScript : LifeScript {
             if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && hit.collider.gameObject.tag == "Horse")
             {
                 line.enabled = true;
-                g.GetComponent<LifeScript>().Damage(5);
+                hit.collider.GetComponent<LifeScript>().Damage(5);
             }
             else
             {
